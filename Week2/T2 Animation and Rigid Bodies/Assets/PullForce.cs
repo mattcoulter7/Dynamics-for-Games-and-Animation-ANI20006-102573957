@@ -9,11 +9,9 @@ public class PullForce : MonoBehaviour
     public float pullRefresh = 2;
 
     private void OnTriggerEnter(Collider other){
-        Debug.Log("Object Entered");
         StartCoroutine(applyForce(other.gameObject,true));
     }
     private void OnTriggerExit(Collider other){
-        Debug.Log("Object Left");
         StartCoroutine(applyForce(other.gameObject,false));
     }
 
