@@ -4,16 +4,27 @@ using UnityEngine;
 
 public class Painter : MonoBehaviour
 {
-    public int paintMaterialIndex = 0;
     public Color color = Color.black;
-
+    public Material material;
+    Texture2D _texture;
+    Renderer _renderer;
     void Start(){
-        // Ensure the texture is an instance
-        Renderer renderer = GetComponent<Renderer>();
-        Texture2D texInstance = DuplicateTexture(GetPaintTexture());
-        renderer.materials[paintMaterialIndex].mainTexture = texInstance;
+        _renderer = GetComponentInParent<Renderer>();
 
-        BroadcastMessage("OnNewTexture",texInstance);
+        // Ensure the texture is an instance
+        material = new Material(material);
+        _texture = DuplicateTexture((Texture2D)material.mainTexture); 
+        material.mainTexture = _texture;
+
+        Material[] newMaterials = new Material[_renderer.materials.Length + 1];
+        for (int i = 0; i < _renderer.materials.Length; i++){
+            newMaterials[i] = _renderer.materials[i];
+        }
+        newMaterials[_renderer.materials.Length] = material;
+
+        _renderer.materials = newMaterials;
+
+        BroadcastMessage("OnNewTexture",_texture);
     }
     // Start is called before the first frame update
     Texture2D DuplicateTexture(Texture2D tex)
@@ -31,40 +42,32 @@ public class Painter : MonoBehaviour
         return dup;
     }
 
-    public Texture2D GetPaintTexture()
-    {
-        return GetComponent<Renderer>().materials[paintMaterialIndex].mainTexture as Texture2D;
-    }
-
     public void PaintCircle(Vector2 textureCoord, float radius = 20)
     {
         // https://stackoverflow.com/questions/30410317/how-to-draw-circle-on-texture-in-unity
         int x = (int)textureCoord.x;
         int y = (int)textureCoord.y;
 
-        Texture2D tex = GetPaintTexture();
         float rSquared = radius * radius;
 
         for (float u = x - radius; u < x + radius + 1; u++)
             for (float v = y - radius; v < y + radius + 1; v++)
                 if ((x - u) * (x - u) + (y - v) * (y - v) < rSquared)
-                    tex.SetPixel((int)u, (int)v, color);
+                    _texture.SetPixel((int)u, (int)v, color);
         
-        tex.Apply();
+        _texture.Apply();
     }
 
     public void PaintPixel(Vector2 textureCoord)
     {
         int x = (int)textureCoord.x;
         int y = (int)textureCoord.y;
-        
-        Texture2D tex = GetPaintTexture();
 
         // set the pixel on texture hwere contact happened
-        tex.SetPixel(x, y, color);
+        _texture.SetPixel(x, y, color);
 
         // Apply all SetPixel calls
-        tex.Apply();
+        _texture.Apply();
     }
 
     public Vector2? GetUVPixel(Vector3 pos,Vector3 normal){
@@ -76,16 +79,15 @@ public class Painter : MonoBehaviour
         if (!Physics.Raycast(ray, out hit))
             return null;
 
-        Renderer rend = hit.transform.GetComponent<Renderer>();
+        Renderer rend = hit.transform.GetComponentInParent<Renderer>();
         MeshCollider meshCollider = hit.collider as MeshCollider;
 
-        if (rend == null || rend.sharedMaterial == null || rend.sharedMaterial.mainTexture == null || meshCollider == null)
+        if (rend == null || rend.sharedMaterial == null || meshCollider == null)
             return null;
 
         pixelUV = hit.textureCoord;
-        Texture2D tex = GetPaintTexture();
-        pixelUV.x *= tex.width;
-        pixelUV.y *= tex.height;
+        pixelUV.x *= _texture.width;
+        pixelUV.y *= _texture.height;
         return pixelUV;
     }
 

@@ -4,20 +4,29 @@ using UnityEngine;
 
 public class FireConduction : MonoBehaviour
 {
+    public float maxExposure = 300f;
     public float thermalConductivity = 1.1f;
+    public float growRate = 0.1f;
     FireManager fm;
 
     void Start()
     {
         fm = GetComponent<FireManager>();
+        StartCoroutine("Grow");
     }
-
-    void Update()
+    IEnumerator Grow()
     {
-        // update the radius of each point according to convection formula
-        foreach (var point in fm.points)
+        while (true)
         {
-            point.exposureArea = thermalConductivity * point.exposureArea * (fm.temperature) / fm.depth;
+            // execute block of code here
+            yield return new WaitForSeconds(growRate);
+
+            // update the radius of each point according to convection formula
+            foreach (var point in fm.points)
+            {
+                if (point.exposureArea >= maxExposure) continue;
+                point.exposureArea = thermalConductivity * point.exposureArea * (fm.temperature) / fm.depth;
+            }
         }
     }
 

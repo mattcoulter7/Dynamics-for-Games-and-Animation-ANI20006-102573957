@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PSTextureEmission : MonoBehaviour
 {
+    public MeshCollider meshCollider;
     void Start(){
         ParticleSystem ps = GetComponent<ParticleSystem>();
         ParticleSystem.ShapeModule shapeModule = ps.shape;
@@ -12,10 +13,11 @@ public class PSTextureEmission : MonoBehaviour
         shapeModule.textureAlphaAffectsParticles = true;
         shapeModule.textureColorAffectsParticles = false;
         shapeModule.textureClipThreshold = 0.5f;
-        shapeModule.scale = transform.parent.localScale;
 
-        MeshFilter meshFilter = GetComponentInParent<MeshFilter>();
-        shapeModule.mesh = meshFilter.mesh;
+        shapeModule.scale = meshCollider.transform.localScale;
+        transform.position = meshCollider.transform.position;
+        transform.rotation = meshCollider.transform.rotation;
+        shapeModule.mesh = meshCollider.sharedMesh;
     }
 
     // UnityMessageEvent
