@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3647862243075684426}
   - component: {fileID: 3647862243075684469}
   - component: {fileID: 6766855038007970367}
+  - component: {fileID: 8146663813825949049}
   m_Layer: 0
   m_Name: PS_Fire_ALPHA
   m_TagString: Conduction
@@ -4817,6 +4818,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e95ddb0cc0628124a944d5b896ae556d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8146663813825949049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3647862243075684471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0159f6202e1c544cb1c27755aaea718, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startSizeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.09660339
+      value: -0.10321045
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 18.698097
+      value: 8.259093
+      inSlope: 1.2085041
+      outSlope: 1.2085041
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.075602755
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 27.15318
+      value: 14.469057
+      inSlope: 0.05442615
+      outSlope: 0.05442615
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.29359156
+    - serializedVersion: 3
+      time: 44.66147
+      value: 14.02483
+      inSlope: -0.17270124
+      outSlope: -0.17270124
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.2405815
+      outWeight: 0.36466768
+    - serializedVersion: 3
+      time: 79.93132
+      value: -0.22004466
+      inSlope: -0.19761844
+      outSlope: -0.19761844
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.11697488
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  inProgress: 0
+  beginTime: 0
+  endTime: 0
+  currentDuration: 0
 --- !u!1 &3647862243480396267
 GameObject:
   m_ObjectHideFlags: 0
@@ -4829,6 +4897,7 @@ GameObject:
   - component: {fileID: 3647862243480396270}
   - component: {fileID: 3647862243480396265}
   - component: {fileID: 8821048530881319971}
+  - component: {fileID: 5247275042425251099}
   m_Layer: 0
   m_Name: PS_Fire_ADD
   m_TagString: Convection
@@ -9634,6 +9703,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e95ddb0cc0628124a944d5b896ae556d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5247275042425251099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3647862243480396267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0159f6202e1c544cb1c27755aaea718, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startSizeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 24.548447
+      value: 2.7210288
+      inSlope: 0.35627666
+      outSlope: 0.35627666
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 31.374388
+      value: 6.3773623
+      inSlope: 0.13750905
+      outSlope: 0.13750905
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.3570432
+    - serializedVersion: 3
+      time: 35.106293
+      value: 6.7929816
+      inSlope: -0.061691914
+      outSlope: -0.061691914
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.2835445
+    - serializedVersion: 3
+      time: 49.908928
+      value: -0.024266656
+      inSlope: 0.0015109064
+      outSlope: 0.0015109064
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.26380515
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  inProgress: 0
+  beginTime: 0
+  endTime: 0
+  currentDuration: 0
 --- !u!1 &3647862243559362231
 GameObject:
   m_ObjectHideFlags: 0
@@ -9646,6 +9782,7 @@ GameObject:
   - component: {fileID: 3647862243559362186}
   - component: {fileID: 3647862243559362229}
   - component: {fileID: 658654848636760389}
+  - component: {fileID: 6139948329367354532}
   m_Layer: 0
   m_Name: PS_Fire_Glow
   m_TagString: Radiation
@@ -13415,7 +13552,7 @@ ParticleSystem:
         m_RotationOrder: 4
     minKillSpeed: 0
     maxKillSpeed: 10000
-    radiusScale: 1
+    radiusScale: 0.4
     collidesWith:
       serializedVersion: 2
       m_Bits: 4294967295
@@ -14451,6 +14588,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e95ddb0cc0628124a944d5b896ae556d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6139948329367354532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3647862243559362231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0159f6202e1c544cb1c27755aaea718, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startSizeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 32.76921
+      value: 5.0023875
+      inSlope: 0.007732121
+      outSlope: 0.007732121
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.4432988
+    - serializedVersion: 3
+      time: 50.226692
+      value: -0.06710762
+      inSlope: 0.00043447284
+      outSlope: 0.00043447284
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13539219
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  inProgress: 0
+  beginTime: 0
+  endTime: 0
+  currentDuration: 0
 --- !u!1 &3647862244406704012
 GameObject:
   m_ObjectHideFlags: 0
@@ -14463,6 +14649,7 @@ GameObject:
   - component: {fileID: 3647862244406704003}
   - component: {fileID: 3647862244406704002}
   - component: {fileID: 6883194950431644365}
+  - component: {fileID: 684491633260510955}
   m_Layer: 0
   m_Name: PS_Sparks
   m_TagString: Untagged
@@ -19268,6 +19455,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e95ddb0cc0628124a944d5b896ae556d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &684491633260510955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3647862244406704012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0159f6202e1c544cb1c27755aaea718, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startSizeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 27.479319
+      value: 1.109116
+      inSlope: 0.10479027
+      outSlope: 0.10479027
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 38.546635
+      value: 2.9728594
+      inSlope: -0.0016176912
+      outSlope: -0.0016176912
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.11519069
+      outWeight: 0.49788418
+    - serializedVersion: 3
+      time: 47.86017
+      value: 0.5567462
+      inSlope: -0.060507905
+      outSlope: -0.060507905
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.12710111
+    - serializedVersion: 3
+      time: 65.06071
+      value: 0.18842125
+      inSlope: 0.000000035984453
+      outSlope: 0.000000035984453
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.29870152
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  inProgress: 0
+  beginTime: 0
+  endTime: 0
+  currentDuration: 0
 --- !u!1 &5563315605507473652
 GameObject:
   m_ObjectHideFlags: 0
@@ -19329,10 +19583,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: []
-  maxPoints: 5
+  psSizeControllers: []
+  maxPoints: 2
   depth: 50
   temperature: 50
-  exposureArea: 0
 --- !u!114 &5563315605507473656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19346,8 +19600,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxExposure: 200
-  thermalConductivity: 1.1
-  growRate: 0.1
+  thermalConductivity: 1.15
+  growRate: 0.3
 --- !u!1 &5563315605884004417
 GameObject:
   m_ObjectHideFlags: 0

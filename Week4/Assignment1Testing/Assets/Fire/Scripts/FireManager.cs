@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 public class FireManager : MonoBehaviour
 {
     [System.Serializable]
     public class FirePoint
     {
+
         float _exposureArea;
         FireManager fireManager;
         public FirePoint(FireManager fm, Vector2 p, float e)
@@ -29,20 +31,39 @@ public class FireManager : MonoBehaviour
         }
     }
     public List<FirePoint> points = new List<FirePoint>();
+    public PSOverallSizeOverLifetime[] psSizeControllers;
+    
     public int maxPoints = 10;
     public float depth = 5f; // depth of solid, way may be able to calculate this
     public float temperature = 60f;
-    public float exposureArea;
+    
+    bool fireStarted = false;
     private float _exposureArea;
+    void Start()
+    {
+        psSizeControllers = GetComponentsInChildren<PSOverallSizeOverLifetime>();
+    }
 
     public void Light(Vector2 pos)
     {
         if (points.Count >= maxPoints) return;
+        if (fireStarted == false)
+        {
+            OnBeginFire();
+        }
         FirePoint point = new FirePoint(this, pos, 1);
         points.Add(point);
-        SendMessage("OnPointChanged", point);
+        OnPointChanged(point);
     }
 
+    void OnBeginFire()
+    {
+        fireStarted = true;
+        foreach (PSOverallSizeOverLifetime sizeController in psSizeControllers)
+        {
+            sizeController.Run();
+        }
+    }
 
     void OnPointChanged(FirePoint pt)
     {
