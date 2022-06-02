@@ -8,9 +8,17 @@ static public class ParticleSystemExtension
     {
         ParticleSystem.Particle p = new ParticleSystem.Particle();
         p.velocity = dir.normalized * ps.main.startSpeed.Evaluate(Random.value);
-        p.rotation3D = new Vector3(ps.main.startRotationX.Evaluate(Random.value), ps.main.startRotationY.Evaluate(Random.value), ps.main.startRotationZ.Evaluate(Random.value));
+        p.rotation3D = new Vector3(
+            ps.main.startRotationX.Evaluate(Random.value), 
+            ps.main.startRotationY.Evaluate(Random.value), 
+            ps.main.startRotationZ.Evaluate(Random.value)
+        );
         p.rotation = ps.main.startRotation.Evaluate(Random.value);
-        p.startSize3D = new Vector3(ps.main.startSizeX.Evaluate(Random.value), ps.main.startSizeY.Evaluate(Random.value), ps.main.startSizeZ.Evaluate(Random.value));
+        p.startSize3D = new Vector3(
+            ps.main.startSizeX.Evaluate(Random.value), 
+            ps.main.startSizeY.Evaluate(Random.value), 
+            ps.main.startSizeZ.Evaluate(Random.value)
+        );
         p.startSize = ps.main.startSize.Evaluate(Random.value);
         p.randomSeed = ps.randomSeed;
         p.startColor = ps.main.startColor.Evaluate(Random.value);

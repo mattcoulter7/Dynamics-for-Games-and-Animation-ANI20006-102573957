@@ -78,7 +78,7 @@ public class Painter : MonoBehaviour
         Ray ray = new Ray(pos - normal, normal);
         if (!Physics.Raycast(ray, out hit))
             return null;
-        MeshCollider meshCollider = GetComponent<MeshCollider>(); // hit.collider as MeshCollider;
+        MeshCollider meshCollider = hit.collider as MeshCollider;
         Renderer rend = hit.transform.GetComponentInParent<Renderer>();
         if (rend == null || rend.sharedMaterial == null || meshCollider == null)
             return null;
